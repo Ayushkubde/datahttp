@@ -1,0 +1,171 @@
+<Html>
+<div class="fluid-conatiner primary">
+    <h3 CLASS="header">Employee Registration</h3>
+</div><br>
+<div class="fluid-container">
+    <div class="form">
+
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-2">
+                <label class="name">Employee Id:</label>
+            </div>
+            <div class="col-md-2">
+                <input type="number" class="form-control" [(ngModel)]="employe_id" name="employe_id">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-2">
+                <label class="name">Employee Name:</label>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="form-control" [(ngModel)]="employename" name="employename">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-2">
+                <label class="name">Designation:</label>
+            </div>
+            <div class="col-md-2">
+                <select name="Designation" [(ngModel)]="this.designation" class="form-control select">
+          <option selected>Select Designation</option>
+          <option value="Ceo">CEO</option>
+          <option value="Manager">Manager</option>
+          <option value="Employee">Employee</option>
+        </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-2">
+                <label class="name">Salary:</label>
+            </div>
+            <div class="col-md-2">
+                <input type="number" class="form-control" [(ngModel)]="salary" name="salary">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-2">
+                <label class="name">Email:</label>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="form-control" [(ngModel)]="email" name="email">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-2">
+                <label class="name">Mobile:</label>
+            </div>
+            <div class="col-md-2">
+                <input type="number" class="form-control" [(ngModel)]="mobile" name="mobile">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-2">
+                <label class="name">Qualifications:</label>
+            </div>
+            <div class="col-md-2">
+                <select name="Qualifications" [(ngModel)]="qualification" class="form-control select">
+          <option selected>Select Qualifications</option>
+          <option value="Mba">MBA</option>
+          <option value="BTECH">BTECH</option>
+          <option value="Mca">Mca</option>
+        </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-2">
+                <label class="name">Manager:</label>
+            </div>
+            <div class="col-md-2">
+                <input type="text" [(ngModel)]="manager" name="manger" class="form-control">
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-1">
+                <button type="update" name="update" class="btn btn-light" (click)="update()">Update</button>
+            </div>
+            <div class="col-md-1">
+                <button type="reset" name="reset" class="btn btn-light" (click)="reset()">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="fluid-conatiner primary1">
+        <h5 CLASS="header1">Register Employee</h5>
+    </div><br>
+
+    <div class="row">
+        <div class="col-md-1 table-header table-bordered">
+            <label>Employe_id</label>
+        </div>
+
+        <div class="col-md-1 table-header table-bordered">
+            <label>EmployeName</label>
+        </div>
+        <div class="col-md-1 table-header table-bordered">
+            <label>Designation</label>
+        </div>
+        <div class="col-md-1 table-header table-bordered">
+            <label>Salary</label>
+        </div>
+        <div class="col-md-1 table-header table-bordered">
+            <label>Email</label>
+        </div>
+        <div class="col-md-1 table-header table-bordered">
+            <label>Mobile</label>
+        </div>
+        <div class="col-md-1 table-header table-bordered">
+            <label>qualification</label>
+        </div>
+        <div class="col-md-1 table-header table-bordered">
+            <label>Manager</label>
+        </div>
+        <div class="col-md-2 table-header table-bordered">
+            <label>Actions</label>
+        </div>
+    </div>
+
+    <div *ngFor="let item of output | async">
+        <div class="row">
+            <div class="col-md-1 table-bordered">
+                <label>{{item.employe_id}}</label>
+            </div>
+            <div class="col-md-1 table-bordered">
+                <label>{{item.employename}}</label>
+            </div>
+            <div class="col-md-1 table-bordered">
+                <label>{{item.designation}}</label>
+            </div>
+            <div class="col-md-1 table-bordered">
+                <label>{{item.salary}}</label>
+            </div>
+            <div class="col-md-1 table-bordered">
+                <label>{{item.email}}</label>
+            </div>
+            <div class="col-md-1 table-bordered">
+                <label>{{item.mobile}}</label>
+            </div>
+            <div class="col-md-1 table-bordered">
+                <label>{{item.qualification}}</label>
+            </div>
+            <div class="col-md-1 table-bordered">
+                <label>{{item.manager}}</label>
+            </div>
+            <div class="col-md-2 table-bordered">
+                <button type="edit" name="edit" (click)="edit(item)">Edit</button>&nbsp;
+                <button type="delete" name="delete" (click)="delete(item.employe_id)">Delete</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</Html>

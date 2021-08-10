@@ -1,0 +1,46 @@
+.header::first-line {
+    color: white;
+}
+
+.header1 {
+    color: white;
+    padding-left: 30px;
+    padding-top: 10px;
+}
+
+.primary {
+    background-color: royalblue;
+    height: 100px;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+.name {
+    color: black;
+    font-weight: bold;
+}
+
+.primary1 {
+    background-color: royalblue;
+    height: 50px;
+}
+
+.table-bordered {
+    border: 1px solid black;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    width: (100%);
+    text-decoration: none;
+    position: relative;
+}
+
+.table-header {
+    color: white;
+    background-color: royalblue;
+}
+
+table-row {
+    padding-left: 10px;
+}
