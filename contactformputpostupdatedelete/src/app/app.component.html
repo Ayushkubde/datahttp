@@ -1,0 +1,52 @@
+<div class="container-fluid">
+
+
+  <label class="text-info">Enter Name:</label><br>
+  <input type="text" class="form-control" [(ngModel)]="name"><br>
+
+  <label class="text-info">Enter course:</label><br>
+  <input type="text" class="form-control" [(ngModel)]="course"><br>
+
+  <label class="text-info">Enter the name you want to update:</label>
+  <input type="text" [(ngModel)]="updatename" class="form-control"><br>
+
+  <label class="text-info">Enter the course you want to update:</label>
+  <input type="text" [(ngModel)]="updatecourse" class="form-control"><br>
+
+  <label class="text-danger">Enter the id for delete:</label>
+  <input type="number" class="form-control" [(ngModel)]="id"><br>
+
+  <button class="btn btn-primary" (click)="getPosts()">Get Posts</button>&nbsp;
+  <button class="btn btn-warning" (click)="addpost()">add post</button>&nbsp;
+  <button class="btn btn-warning" (click)="update()">update</button><br><br>
+ 
+  <div class="row  ">
+
+    <div class="col-md-2 table-bordered">
+      <label>id</label>
+    </div>
+    <div class="col-md-2 table-bordered ">
+      <label class="text-dark">Name</label>
+
+    </div>
+    <div class="col-md-2  table-bordered">
+      <label class="text-dark">Course</label>
+    </div>
+  </div>
+  <div *ngFor="let details of studentdetails | async">
+
+    <div class="row">
+      <div class="col-md-2 table-bordered">
+        <label>{{details.id}}</label>
+      </div>
+      <div class="col-md-2 table-bordered">
+        <label>{{details.name}}</label>
+      </div>
+      <div class="col-md-2 table-bordered">
+        <label>{{details.course}}</label>
+      </div>
+      <button class="btn btn-primary" (click)="delete(details.id)">delete</button>&nbsp;
+      <button class="btn btn-warning" (click)="select(details)">select</button>
+    </div>
+  </div>
+</div>
